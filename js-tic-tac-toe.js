@@ -101,12 +101,19 @@ var checkWin = function() {
     console.log(` ${one} | ${two} | ${three} \n---|---|---\n ${four} | ${five} | ${six} \n---|---|---\n ${seven} | ${eight} | ${nine} `)
     rl.close();
   } else {
-    console.log(`\n\n ${one} | ${two} | ${three} \n---|---|---\n ${four} | ${five} | ${six} \n---|---|---\n ${seven} | ${eight} | ${nine} `)
-    if(currentTurn==="O"){
-      currentTurn="X";
+    if(one!=="1"&&two!=="2"&&three!=="3"&&
+       four!=="4"&&five!=="5"&&six!=="6"&&
+       seven!=="7"&&eight!=="8"&&nine!=="9"){
+      console.log("=^._.^= game. Try Again!")
+      rl.close();
     } else {
-      currentTurn="O";
+      console.log(`\n\n ${one} | ${two} | ${three} \n---|---|---\n ${four} | ${five} | ${six} \n---|---|---\n ${seven} | ${eight} | ${nine} `)
+      if(currentTurn==="O"){
+        currentTurn="X";
+      } else {
+        currentTurn="O";
+      }
+      console.log(`"${currentTurn}" Player, please enter your move.`)
     }
-    console.log(`"${currentTurn}" Player, please enter your move.`)
   }
 }
